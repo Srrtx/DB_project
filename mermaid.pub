@@ -1,0 +1,47 @@
+erDiagram
+  Users ||--o{ Memberships : owns
+  Users ||--o{ Reservations : makes
+   Desks ||--o{ Reservations : reserved
+   Desks ||--o{ Amenities : includes
+
+  Users {
+    int UserID 
+    VARCHAR FirstName
+    VARCHAR LastName
+    VARCHAR Email
+    VARCHAR Phone
+    VARCHAR MembershipType
+   
+  }
+
+  Memberships {
+    int MembershipID 
+    Date StartDate
+    Date EndDate
+    VARCHAR PlanType
+    decimal Price
+  }
+
+  Reservations {
+   int ReservationID 
+   int ReservationDate
+   time  StartTime
+   time EndTime
+  }
+ 
+  Desks {
+    int DeskID 
+    VARCHAR DeskName
+    VARCHAR Location
+    VARCHAR DeskType
+    decimal HourlyRate
+    decimal DailyRate
+    decimal MonthlyRate
+  }
+
+  Amenities {
+    int AmenityID 
+    VARCHAR AmenityName
+    decimal Cost
+  }
+
